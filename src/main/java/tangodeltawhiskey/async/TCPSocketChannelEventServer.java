@@ -34,7 +34,8 @@ public class TCPSocketChannelEventServer extends
     private Selector _selector;
     private int _localPort;
 
-    public TCPSocketChannelEventServer(String localAddress, int port, int readBufferSize,
+    public TCPSocketChannelEventServer(String localAddress, int port,
+                                       int readBufferSize,
                                        SocketChannelEventHandler eventHandler,
                                        ExecutorService eventExecutor) {
 
@@ -57,7 +58,8 @@ public class TCPSocketChannelEventServer extends
     }
 
     @Override
-    protected void processEvent(Collection<SelectionKey> selectedKeys) throws Exception {
+    protected void processEvent(Collection<SelectionKey> selectedKeys)
+            throws Exception {
         Iterator<SelectionKey> it = selectedKeys.iterator();
         while (it.hasNext()) {
             SelectionKey key = it.next();

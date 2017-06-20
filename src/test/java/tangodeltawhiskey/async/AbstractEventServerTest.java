@@ -205,12 +205,13 @@ public class AbstractEventServerTest {
         server3.start();
 
         List<Callbacks> expected3 =
-                Arrays.asList(DO_START, AFTER_RUNNING, GET_EVENT, ON_FAILURE, DO_STOP, AFTER_DONE);
+                Arrays.asList(DO_START, AFTER_RUNNING, GET_EVENT, ON_FAILURE,
+                        DO_STOP, AFTER_DONE);
 
         assertEquals(expected3, callbacks3);
 
         /**
-         * Scenario 4: Server throws exception during first getProcess.
+         * Scenario 4: Server throws exception during first processEvent.
          *
          * Expected callback order is:
          *  1. doStart
